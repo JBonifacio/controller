@@ -21,7 +21,7 @@ BaseMap="scancode_map"
 # This is the default layer of the keyboard
 # NOTE: To combine kll files into a single layout, separate them by spaces
 # e.g.  DefaultMap="mylayout mylayoutmod"
-DefaultMap="stdFuncMap"
+DefaultMap="WhiteFox-AriaBlank-0 stdFuncMap"
 
 # This is where you set the additional layers
 # NOTE: Indexing starts at 1
@@ -29,7 +29,7 @@ DefaultMap="stdFuncMap"
 # e.g.  PartialMaps[1]="layer1 layer1mod"
 #       PartialMaps[2]="layer2"
 #       PartialMaps[3]="layer3"
-PartialMaps[1]="whitefox"
+PartialMaps[1]="WhiteFox-AriaBlank-1 stdFuncMap"
 
 
 
@@ -63,10 +63,9 @@ Compiler="gcc"
 
 # Check if the library can be found
 if [ ! -f cmake.bash ]; then
-	echo "ERROR: Cannot find 'cmake.bash'"
-	exit 1
+    echo "ERROR: Cannot find 'cmake.bash'"
+    exit 1
 fi
 
 # Load the library
 source cmake.bash
-
