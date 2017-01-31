@@ -34,15 +34,15 @@
 
 
 // Strings used in the CLI module
-#define CLI_Revision            "ea3be696209ee2179e21313bd76b166e0a0998f6"
+#define CLI_Revision            "566a8d1637e6c2eaa18b7a8ad9cfe40727d279da"
 #define CLI_Branch              "master"
 #define CLI_ModifiedStatus      "Dirty"
-#define CLI_ModifiedFiles       "\r\n\tKeyboards/whitefox.bash"
+#define CLI_ModifiedFiles       "\r\n\tkll"
 #define CLI_RepoOrigin          "git@github.com:JBonifacio/controller.git"
-#define CLI_CommitDate          "2017-01-01 16:17:18 -0800"
-#define CLI_CommitAuthor        "GitHub <noreply@github.com>"
+#define CLI_CommitDate          "2017-01-25 11:05:33 -0800"
+#define CLI_CommitAuthor        "Joseph Bonifacio <bonifacio.joseph@gmail.com>"
 #define CLI_Modules             "Scan(WhiteFox) Macro(PartialMap) Output(pjrcUSB) Debug(full)"
-#define CLI_BuildDate           "2017-01-17 12:28:46 -0800"
+#define CLI_BuildDate           "2017-01-30 13:49:27 -0800"
 #define CLI_BuildOS             "Generic"
 #define CLI_Arch                "arm"
 #define CLI_Chip                "mk20dx256vlh7"
@@ -56,5 +56,5 @@
 // match the INF file.
 #define VENDOR_ID               0x1C11
 #define PRODUCT_ID              0xB04D
-#define BCD_VERSION             503
+#define BCD_VERSION             505
 
