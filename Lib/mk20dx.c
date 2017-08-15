@@ -1,7 +1,7 @@
 /* Teensyduino Core Library
  * http://www.pjrc.com/teensy/
  * Copyright (c) 2013 PJRC.COM, LLC.
- * Modifications by Jacob Alexander 2014-2015
+ * Modifications by Jacob Alexander 2014-2017
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -40,6 +40,7 @@
 #endif
 
 // Local Includes
+#include "entropy.h"
 #include "mk20dx.h"
 
 
@@ -93,6 +94,15 @@ extern volatile uint32_t systick_millis_count;
 void systick_default_isr()
 {
 	systick_millis_count++;
+
+	// Not necessary in bootloader
+#if !defined(_bootloader_)
+	// Reset cycle count register
+	ARM_DEMCR |= ARM_DEMCR_TRCENA;
+	ARM_DWT_CTRL &= ~ARM_DWT_CTRL_CYCCNTENA;
+	ARM_DWT_CYCCNT = 0;
+	ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
+#endif
 }
 
 
@@ -527,7 +537,7 @@ void ResetHandler()
 	// Also checking for ARM lock-up signal (invalid firmware image)
 	// RCM_SRS1 & 0x02
 	if (    // PIN  (External Reset Pin/Switch)
-		   RCM_SRS0 & 0x40
+		RCM_SRS0 & 0x40
 		// WDOG (Watchdog timeout)
 		|| RCM_SRS0 & 0x20
 		// LOCKUP (ARM Core LOCKUP event)
@@ -690,17 +700,21 @@ void ResetHandler()
 
 #endif
 
-#if !defined(_bootloader_)
 	// Initialize the SysTick counter
 	SYST_RVR = (F_CPU / 1000) - 1;
 	SYST_CSR = SYST_CSR_CLKSOURCE | SYST_CSR_TICKINT | SYST_CSR_ENABLE;
 
+#if !defined(_bootloader_)
 	__enable_irq();
 #else
 	// Disable Watchdog for bootloader
 	WDOG_STCTRLH &= ~WDOG_STCTRLH_WDOGEN;
 #endif
 
+	// Intialize entropy for random numbers
+	rand_initialize();
+
+	// Start main
 	main();
 	while ( 1 ); // Shouldn't get here...
 }

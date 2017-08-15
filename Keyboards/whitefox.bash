@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Keyboard: WhiteFox
 # These build scripts are just a convenience for configuring your keyboard (less daunting than CMake)
-# Jacob Alexander 2015-2016
+# Jacob Alexander 2015-2017
 
 
 
@@ -16,7 +16,7 @@ BuildPath="WhiteFox"
 ## KLL Configuration ##
 
 # Generally shouldn't be changed, this will affect every layer
-BaseMap="scancode_map"
+BaseMap="scancode_map scancode_map.truefox"
 
 # This is the default layer of the keyboard
 # NOTE: To combine kll files into a single layout, separate them by spaces
@@ -43,7 +43,7 @@ PartialMaps[1]="boni/WhiteFox-AriaBlank-1 stdFuncMap"
 
 # Keyboard Module Configuration
 ScanModule="WhiteFox"
-MacroModule="PartialMap"
+MacroModule="PixelMap"
 OutputModule="pjrcUSB"
 DebugModule="full"
 
