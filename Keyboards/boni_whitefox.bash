@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # Keyboard: WhiteFox
 # These build scripts are just a convenience for configuring your keyboard (less daunting than CMake)
-# Jacob Alexander 2015-2016
-
-
+# Jacob Alexander 2015-2016, modified by Bonisaur
 
 #################
 # Configuration #
@@ -21,7 +19,7 @@ BaseMap="scancode_map"
 # This is the default layer of the keyboard
 # NOTE: To combine kll files into a single layout, separate them by spaces
 # e.g.  DefaultMap="mylayout mylayoutmod"
-DefaultMap="boni/WhiteFox-AriaBlank-0 stdFuncMap"
+DefaultMap="WhiteFox-AriaBlank-0 stdFuncMap"
 
 # This is where you set the additional layers
 # NOTE: Indexing starts at 1
@@ -29,7 +27,7 @@ DefaultMap="boni/WhiteFox-AriaBlank-0 stdFuncMap"
 # e.g.  PartialMaps[1]="layer1 layer1mod"
 #       PartialMaps[2]="layer2"
 #       PartialMaps[3]="layer3"
-PartialMaps[1]="boni/WhiteFox-AriaBlank-1 stdFuncMap"
+PartialMaps[1]="WhiteFox-AriaBlank-1 stdFuncMap"
 
 
 

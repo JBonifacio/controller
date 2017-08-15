@@ -34,15 +34,15 @@
 
 
 // Strings used in the CLI module
-#define CLI_Revision            "566a8d1637e6c2eaa18b7a8ad9cfe40727d279da"
+#define CLI_Revision            "e4b2841d800efc91c890531ff771ca4136c83da7"
 #define CLI_Branch              "master"
 #define CLI_ModifiedStatus      "Dirty"
-#define CLI_ModifiedFiles       "\r\n\tkll"
+#define CLI_ModifiedFiles       "\r\n\tKeyboards/WhiteFox.gcc/Makefile\r\n\tKeyboards/WhiteFox.gcc/buildvars.h\r\n\tKeyboards/WhiteFox.gcc/generatedKeymap.h\r\n\tKeyboards/WhiteFox.gcc/kll_defs.h\r\n\tKeyboards/whitefox.bash\r\n\tScan/Infinity_60%_LED/scancode_map.kll\r\n\tScan/WhiteFox/scan_loop.c\r\n\tScan/WhiteFox/scancode_map.kll\r\n\tkll"
 #define CLI_RepoOrigin          "git@github.com:JBonifacio/controller.git"
-#define CLI_CommitDate          "2017-01-25 11:05:33 -0800"
-#define CLI_CommitAuthor        "Joseph Bonifacio <bonifacio.joseph@gmail.com>"
+#define CLI_CommitDate          "2017-04-11 08:37:41 -0700"
+#define CLI_CommitAuthor        "Joseph Bonifacio <joseph@jbonifacio.net>"
 #define CLI_Modules             "Scan(WhiteFox) Macro(PartialMap) Output(pjrcUSB) Debug(full)"
-#define CLI_BuildDate           "2017-01-30 13:49:27 -0800"
+#define CLI_BuildDate           "2017-05-31 22:43:58 -0700"
 #define CLI_BuildOS             "Generic"
 #define CLI_Arch                "arm"
 #define CLI_Chip                "mk20dx256vlh7"
@@ -56,5 +56,5 @@
 // match the INF file.
 #define VENDOR_ID               0x1C11
 #define PRODUCT_ID              0xB04D
-#define BCD_VERSION             505
+#define BCD_VERSION             525
 
